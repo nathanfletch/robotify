@@ -1,4 +1,7 @@
-
+function robotify(num) {
+  if (num.trimStart().trim().length === 0)
+    return ["I only understand a single integer"];
+}
 
 //ui logic
 // $(document).ready(function () {
