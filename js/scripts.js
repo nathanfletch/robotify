@@ -26,6 +26,7 @@ function robotify(numString, name) {
         message.push(i.toString());
       }
     }
+    
   }
 
   return message;
@@ -61,7 +62,8 @@ $(document).ready(function () {
     }
     $("#custom-display").slideUp("slow", function() {
       $("#another").hide();
-      
+      $("#button-display").slideDown();
+      $("#backwards").slideDown();
     });
     $("#display-text").text(message.join(", "));
     $("#display").slideDown();
@@ -84,13 +86,14 @@ $(document).ready(function () {
     e.preventDefault();
     const teachInput = $("#teach-input").val();
     const placeInput = $("#place-input").val();
-    $("#another").show();
     
     message = teach(message, teachInput, placeInput);
+
     $("#display").slideUp("slow", function () {
       $("#display-text").text(message.join(", "));
       $("#backwards").hide();
+      $("#another").slideDown();
+      $("#display").slideDown();
     });
-    $("#display").slideDown();
   });
 });
