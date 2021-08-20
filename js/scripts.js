@@ -29,11 +29,21 @@ function robotify(numString) {
 
 // ui logic
 $(document).ready(function () {
+  let message = [];
+
   $("form").submit(function (event) {
     event.preventDefault();
     const text = $("#input1").val();
-    const message = robotify(text);
+    message = robotify(text);
     // if (message.length > 10)
     $("#display-text").text(message.join(", "));
+    $("#display").slideDown();
+  });
+
+  $("#backwards").click(function () {
+    $("#display").slideUp("slow", function () {
+      $("#display-text").text(message.reverse().join(", "));
+    });
+    $("#display").slideDown();
   });
 });

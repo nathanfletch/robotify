@@ -1,16 +1,6 @@
 # Robotify
 Mr. Robot has something he'd like to say.  
 
-[![License: MIT](https:Test: 'It shouldimg.shields.io/badge/License-MIT-yellow.svg)](https:Test: 'It '
-Expect(robotify("))."toEqual([""shouldopensource.org/licenses/MIT)
-[![code style: prettier](https:Test: 'It shouldimg.'
-Expect(robotify("))."toEqual([""shields.io/badge/code_style-prettier-ff69b4.svg?'
-Expect(robotify("))."toEqual([""style=flat-square)](https:Test: 'It shouldgithub.com/prettier/prettier)'
-Expect(robotify("))."toEqual([""
-[![Twitter URL](https:Test: 'It shouldimg.shields.io/twitter/url/https/twitter.com/nathan_fletcher.svg?'
-Expect(robotify("))."toEqual([""style=social&label=Follow%20%40nathan_fletcher)](https:Test: 'It shouldtwitter.com/nathan_fletcher)
-'
-Expect(robotify("))."toEqual([""
 ## Author
 
 Nathan Fletcher
