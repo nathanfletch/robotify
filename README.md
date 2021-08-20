@@ -75,8 +75,11 @@ Expect(robotify(" 0")).toEqual(["0"]);
 Test: 'It should return the message "I only understand a single integer" if the user inputs any string other than a single integer with whitespace'
 Expect(robotify("hi")).toEqual(["I only understand a single integer"]);
 
+<!-- 
+This test was overridden and replaced by the next test:
 Test: 'It should generate an array of numbers from 0 to the user input'
-Expect(robotify("1")).toEqual(["0", "1"]);
+Expect(robotify("1")).toEqual(["0", "1"]); 
+-->
 
 Test: 'It should replace numbers that contain the digit 1 with "Beep!" '
 Expect(robotify("1")).toEqual(["0", "Beep!"]);
