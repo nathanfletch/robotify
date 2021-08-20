@@ -40,7 +40,11 @@ There are no known bugs at this time.
 
 ## Future Plans
 
-There are no known bugs at this time.
+-Add more styling
+-Add animations
+-Add a blackscreen on the 77 error message
+-Add name input
+-Add word input for custom replacement
 
 
 ## Contact
@@ -76,7 +80,7 @@ Test: 'It should return the message "I only understand a single integer" if the 
 Expect(robotify("hi")).toEqual(["I only understand a single integer"]);
 
 <!-- 
-This test was overridden and replaced by the next test:
+This test was overridden and replaced once special cases were introduced:
 Test: 'It should generate an array of numbers from 0 to the user input'
 Expect(robotify("1")).toEqual(["0", "1"]); 
 -->
@@ -98,3 +102,6 @@ Expect(robotify("13")).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor
 
 Test: 'It should prioritize replacing numbers that contain the digit 3 with "Boop!" over replacing numbers that contain the digit 2 with "Boop!"'
 Expect(robotify("23")).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor?", "4", "5", "6", "7", "8", "9", "Beep", "Beep", "Boop!", "Won't you be my neighbor?", "Beep", "Beep", "Beep", "Beep", "Beep", "Beep", "Boop!", "Boop!", "Boop!", "Won't you be my neighbor?"]);
+
+Test: 'It should return a special message repeating "WHY ARE YOU HURTING ME!?" until the robot dies'
+Expect(robotify("77")).toEqual(["WHY ARE YOU HURTING ME!?", ... , "WHY ARE YOU HURTING ME!?", "EXPERIENCING TERMINAL FAILURE"]);

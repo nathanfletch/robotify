@@ -4,25 +4,36 @@ function robotify(numString) {
   num = parseInt(num);
 
   let message = [];
-  for (let i = 0; i <= num; i++) {
-    if (i.toString().includes("3")) {
-      message.push("Won't you be my neighbor?");
-    } else if (i.toString().includes("2")) {
-      message.push("Boop!");
-    } else if (i.toString().includes("1")) {
-      message.push("Beep!");
-    } else {
-      message.push(i.toString());
+
+  if (num === 77) {
+    for (let i = 0; i < num; i++) {
+      message.push("WHY ARE YOU HURTING ME!?");
+    }
+    message.push("EXPERIENCING TERMINAL FAILURE");
+  } else {
+    for (let i = 0; i <= num; i++) {
+      if (i.toString().includes("3")) {
+        message.push("Won't you be my neighbor?");
+      } else if (i.toString().includes("2")) {
+        message.push("Boop!");
+      } else if (i.toString().includes("1")) {
+        message.push("Beep!");
+      } else {
+        message.push(i.toString());
+      }
     }
   }
+
   return message;
 }
 
-//ui logic
-// $(document).ready(function () {
-//   $("form").submit(function (event) {
-//     event.preventDefault();
-//     const text = $("#input1").val();
-//     $("#display-text").text(text);
-//   });
-// });
+// ui logic
+$(document).ready(function () {
+  $("form").submit(function (event) {
+    event.preventDefault();
+    const text = $("#input1").val();
+    const message = robotify(text);
+    // if (message.length > 10)
+    $("#display-text").text(message.join(", "));
+  });
+});
