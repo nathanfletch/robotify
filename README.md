@@ -94,4 +94,7 @@ Test: 'It should prioritize replacing numbers that contain the digit 3 with "Boo
 Expect(robotify("23")).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor?", "4", "5", "6", "7", "8", "9", "Beep", "Beep", "Boop!", "Won't you be my neighbor?", "Beep", "Beep", "Beep", "Beep", "Beep", "Beep", "Boop!", "Boop!", "Boop!", "Won't you be my neighbor?"]);
 
 Test: 'It should return a special message repeating "WHY ARE YOU HURTING ME!?" until the robot dies'
-Expect(robotify("77")).toEqual(["WHY ARE YOU HURTING ME!?", ... , "WHY ARE YOU HURTING ME!?", "EXPERIENCING TERMINAL FAILURE"]);
+Expect(robotify("77")).toEqual(["WHY ARE YOU HURTING ME!?", "WHY ARE YOU HURTING ME!?", "WHY ARE YOU HURTING ME!?", "WHY ARE YOU HURTING ME!?", "EXPERIENCING TERMINAL FAILURE!!"]);
+
+Test: 'It should add the input name to the end of "Won't you be my neighbor?" if it is given a 2nd parameter'
+Expect(robotify("3", "bob")).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor, bob?"]);
