@@ -5,7 +5,9 @@ function robotify(numString) {
 
   let message = [];
   for (let i = 0; i <= num; i++) {
-    if (i.toString().includes("2")) {
+    if (i.toString().includes("3")) {
+      message.push("Won't you be my neighbor?");
+    } else if (i.toString().includes("2")) {
       message.push("Boop!");
     } else if (i.toString().includes("1")) {
       message.push("Beep!");
