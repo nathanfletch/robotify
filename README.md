@@ -1,5 +1,5 @@
 # Robotify
-Mr. Robot has something he'd like to say.  
+Robot77 wants to chat.
 
 ## Author
 
@@ -7,7 +7,7 @@ Nathan Fletcher
 
 ## Description
 
-This project accepts a number and outputs a message from Mr. Robot.
+This project accepts a number and outputs a message from Robot77.
 
 ## Techonologies used:
 

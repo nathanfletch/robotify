@@ -56,15 +56,15 @@ $(document).ready(function () {
 
     if (message[0] === "WHY ARE YOU HURTING ME!?") {
       $("form#num-form").hide();
-      $("#backwards").hide();
-      $("#customize").hide();
       $("#custom-display").hide();
+      $("#button-display").hide();
+    } else {
+      $("#custom-display").slideUp("slow", function() {
+        $("#another").hide();
+        $("#button-display").slideDown();
+        // $("#backwards").slideDown();
+      });
     }
-    $("#custom-display").slideUp("slow", function() {
-      $("#another").hide();
-      $("#button-display").slideDown();
-      $("#backwards").slideDown();
-    });
     $("#display-text").text(message.join(", "));
     $("#display").slideDown();
   });
