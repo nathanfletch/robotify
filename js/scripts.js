@@ -1,6 +1,6 @@
 function robotify(numString, name) {
   let num = numString.trimStart().trim();
-  if (!/^\+?\d+$/.test(num)) return ["I only understand a single integer"];
+  if (!/^\+?\d+$/.test(num)) return ["I only understand a single positive integer"];
   num = parseInt(num);
 
   let message = [];
@@ -31,26 +31,38 @@ function robotify(numString, name) {
   return message;
 }
 
+function teach(msg, phrase, place) {
+  return msg.map((element, i) => {
+    return i.toString().includes(place) ? phrase : element;
+  });
+}
+
 // ui logic
 $(document).ready(function () {
   let message = [];
 
-  $("form").submit(function (event) {
+  $("form#num-form").submit(function (event) {
     event.preventDefault();
-    const text = $("#word-input").val();
-    const name = $("#name-input").val();
-
-    if (name) {
-      message = robotify(text, name);
-    } else {
-      message = robotify(text);
-    }
     
-    if (message[0] === "WHY ARE YOU HURTING ME!?") {
-      $("form").hide();
-      $("#backwards").hide();
+    const numInput = $("#num-input").val();
+    const nameInput = $("#name-input").val();
+
+    if (nameInput) {
+      message = robotify(numInput, nameInput);
+    } else {
+      message = robotify(numInput);
     }
-    // if (message.length > 10)
+
+    if (message[0] === "WHY ARE YOU HURTING ME!?") {
+      $("form#num-form").hide();
+      $("#backwards").hide();
+      $("#customize").hide();
+      $("#custom-display").hide();
+    }
+    $("#custom-display").slideUp("slow", function() {
+      $("#another").hide();
+      
+    });
     $("#display-text").text(message.join(", "));
     $("#display").slideDown();
   });
@@ -58,6 +70,26 @@ $(document).ready(function () {
   $("#backwards").click(function () {
     $("#display").slideUp("slow", function () {
       $("#display-text").text(message.reverse().join(", "));
+      $('#customize').toggle();
+    });
+    $("#display").slideDown();
+  });
+
+  $("#customize").click(function () {
+    $("#button-display").slideUp();
+    $("#custom-display").slideDown();
+  });
+
+  $("#custom-form").submit(function (e) {
+    e.preventDefault();
+    const teachInput = $("#teach-input").val();
+    const placeInput = $("#place-input").val();
+    $("#another").show();
+    
+    message = teach(message, teachInput, placeInput);
+    $("#display").slideUp("slow", function () {
+      $("#display-text").text(message.join(", "));
+      $("#backwards").hide();
     });
     $("#display").slideDown();
   });

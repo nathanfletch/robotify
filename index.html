@@ -9,14 +9,14 @@
   </head>
   <body>
     <div class="container">
-      <h1>Hi, I'm Mr. Robot.</h1>
+      <h1>Hi, I'm Robot77.</h1>
       <h2>Let's be friends.</h2>
-      <form>
+      <form id="num-form">
         <div class="form-row">
           <div class="col">
             <input
               type="text"
-              id="word-input"
+              id="num-input"
               class="form-control"
               placeholder="Enter a number"
             />
@@ -32,11 +32,42 @@
           <button class="btn btn-primary" id="submit">See Message</button>
         </div>
       </form>
-      <div id="display" class="hidden">
+      <div id="display" class="mb-3 hidden">
         <p><span id="display-text"></span></p>
-        <div id="backwards" class="btn btn-primary">
-          I can say it backwards, too!
+        <div id="button-display">
+          <div id="backwards" class="btn btn-warning">
+            I can say it backwards, too!
+          </div>
+          <div id="customize" class="btn btn-success">Teach Me</div>
         </div>
+      </div>
+
+      <div id="custom-display" class="hidden">
+        <p id="another" class="hidden mb-3">Want to teach me anything else?</p>
+        <form id="custom-form">
+          <div class="form-row">
+            <div class="col">
+              <input
+                type="text"
+                id="teach-input"
+                class="form-control"
+                placeholder="Teach me something"
+              />
+            </div>
+            <div class="col">
+              <!--  -->
+              <input
+                type="number"
+                id="place-input"
+                class="form-control"
+                min="0"
+                max="9"
+                placeholder="Where?"
+              />
+            </div>
+            <button class="btn btn-primary" id="submit">See Message</button>
+          </div>
+        </form>
       </div>
     </div>
   </body>

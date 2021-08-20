@@ -57,8 +57,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Describe: robotify()
 
-Test: 'It should return the message "I only understand a single integer" if the user inputs an empty string'
-Expect(robotify("")).toEqual(["I only understand a single integer"]);
+Test: 'It should return the message "I only understand a single positive integer" if the user inputs an empty string'
+Expect(robotify("")).toEqual(["I only understand a single positive integer"]);
 
 Test: 'It should return "0" if the user inputs 0'
 Expect(robotify("0")).toEqual(["0"]);
@@ -66,8 +66,8 @@ Expect(robotify("0")).toEqual(["0"]);
 Test: 'It should remove empty spaces if the user input includes empty spaces before or after an integer'
 Expect(robotify(" 0")).toEqual(["0"]);
 
-Test: 'It should return the message "I only understand a single integer" if the user inputs any string other than a single integer with whitespace'
-Expect(robotify("hi")).toEqual(["I only understand a single integer"]);
+Test: 'It should return the message "I only understand a single positive integer" if the user inputs any string other than a single positive integer with whitespace'
+Expect(robotify("hi")).toEqual(["I only understand a single positive integer"]);
 
 <!-- 
 This test was overridden and replaced once special cases were introduced:
@@ -98,3 +98,8 @@ Expect(robotify("77")).toEqual(["WHY ARE YOU HURTING ME!?", "WHY ARE YOU HURTING
 
 Test: 'It should add the input name to the end of "Won't you be my neighbor?" if it is given a 2nd parameter'
 Expect(robotify("3", "bob")).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor, bob?"]);
+
+Describe: teach()
+
+Test: 'It should replace every element in the array output by robotify() that contains the digit input by the user to be the phrase input by the user'
+Expect(teach(["0", "Beep!"], "abc4", "0")).toEqual(["abc4", "Beep!"]);
