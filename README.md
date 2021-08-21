@@ -19,8 +19,7 @@ This project accepts a number and outputs a message from Robot77.
 ## Setup
 
 1. Clone the source code from the [repo](https:Test: 'It shouldgithub.com/nathanfletch/portfolio)
-2. Navigate to the directory on your computer.'
-Expect(robotify("))."toEqual([""
+2. Navigate to the directory on your computer.
 3. Open the index.html file in your browser.
 
 
