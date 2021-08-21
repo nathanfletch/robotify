@@ -18,7 +18,7 @@ This project accepts a number and outputs a message from Robot77.
 
 ## Setup
 
-1. Clone the source code from the [repo](https:Test: 'It shouldgithub.com/nathanfletch/portfolio)
+1. Clone the source code from the [repo](https:github.com/nathanfletch/portfolio)
 2. Navigate to the directory on your computer.
 3. Open the index.html file in your browser.
 
@@ -29,11 +29,11 @@ There are no known bugs at this time.
 
 ## Future Plans
 
--Add more styling
--Add animations
--Add a blackscreen on the 77 error message
--Add name input
--Add word input for custom replacement
+- Add more styling
+- Add animations
+- Add a blackscreen on the 77 error message
+- Add name input
+- Add word input for custom replacement
 
 
 ## Contact
